@@ -5,11 +5,21 @@
     flex-direction: column;
     height: 75vh;
     margin: 20px;
+    width: 80%;
 
+}
+
+.map h1{
+    max-width: 25ch;
+    word-wrap: break-word;
+    text-align: center;
 }
 /* Lower z-index for the map container */
 .leaflet-container {
     z-index: 1; /* You can adjust this to a lower value */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    height: 50vh;
   }
   
   /* If you want to ensure that markers, popups, or other elements stay on top */

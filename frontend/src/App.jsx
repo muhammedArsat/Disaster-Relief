@@ -12,7 +12,7 @@ const App = () => {
       <NavBarWrapper />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/user/location-page" element={<LocationPage />} />
+        <Route path="/user/location" element={<LocationPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
