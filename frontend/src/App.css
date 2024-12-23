@@ -1,0 +1,66 @@
+/* Api for Inclusive Sans Font for all h tags and numbers */
+@import url("https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap");
+
+/* Api for Poppins Fonts for all p tag*/
+@import url("https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*basic css for ui */
+
+body {
+  background-color: #ececec;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inclusive sans";
+}
+p {
+  font-family: "poppins";
+}
+button {
+  font-family: "poppins";
+}
+input {
+  font-family: "poppins";
+}
+
+button{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+
+}
+li{
+  font-size: 20px;
+  font-family:"poppins";
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 468px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+}

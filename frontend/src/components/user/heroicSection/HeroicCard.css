@@ -1,0 +1,70 @@
+
+
+.heroic_section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding:50px 10px;
+    background-color: white;
+    margin: 0 10px 10px  10px;
+    width: 98.5%;
+    height: 50vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(../../../../assets/kc-bk-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    color: white;
+}
+
+.heroic_section h2{
+    padding: 0 20px
+}
+.heroic_section h3{
+    padding: 0px 20px;
+    margin-bottom: 30px;
+    max-width: 45ch;
+    word-wrap: break-word; 
+    line-height: 30px;
+}
+
+.heroic_section button{
+    padding: 20px 30px;
+    border: none;
+    background-color: #007FFF;
+    color: white;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    top: 20px;
+}
+.heroic_section button:hover{
+    transform: scale(1.04);
+    box-shadow: 0 0 10px rgba(255,255,255, 0.5);
+}
+
+  /* media query for tablets */
+  @media (min-width:490px) and (max-width:1024px){
+    .heroic_section{
+        width: 98.5%;
+        height: auto;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+  }
+
+
+/* media query for mobile view */
+@media(max-width:480px){
+    .heroic_section{
+        width: 95%;
+        margin: 0;
+        height: auto;
+    }
+}

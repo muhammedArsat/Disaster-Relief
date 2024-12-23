@@ -1,0 +1,23 @@
+.map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 75vh;
+    margin: 20px;
+
+}
+/* Lower z-index for the map container */
+.leaflet-container {
+    z-index: 1; /* You can adjust this to a lower value */
+  }
+  
+  /* If you want to ensure that markers, popups, or other elements stay on top */
+  .leaflet-marker-icon {
+    z-index: 1000; /* Set higher z-index for markers */
+  }
+  
+  .leaflet-popup {
+    z-index: 9999; /* Set higher z-index for popups */
+  }
+  
