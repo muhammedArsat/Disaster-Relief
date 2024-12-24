@@ -1,73 +1,85 @@
-import React, { useEffect, useState } from "react";
-import "./WeatherCard.css";
-import Image from "../../../../assets/Weather_logo.svg";
-import { weather } from "../../../apis/api";
+import React, { useEffect, useState } from 'react';
+import './WeatherCard.css';
+import Image from '../../../../assets/Weather_logo.svg';
+import { weather } from '../../../apis/api';
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const WeatherCard = () => {
-  const [currweather, setWeather] = useState(null);  // Initialize state to store weather data
-  const [loading, setLoading] = useState(true);  // Track loading state
-  const [error, setError] = useState(null);  // Track error state
+    const [currweather, setWeather] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchWeather = async () => {
-      try {
-        const data = await weather();  // Fetch weather data
-        setWeather(data);  // Set the data to state
-        setLoading(false); 
-        console.log(data) // Mark loading as false when data is fetched
-      } catch (err) {
-        setError("Failed to fetch weather data.");
-        setLoading(false);  // Stop loading on error
-      }
+    useEffect(()=>{
+            Aos.init({duration:1000})
+    },[])
+
+    useEffect(() => {
+        const fetchWeather = async () => {
+            try {
+                const data = await weather();
+                setWeather(data);
+                setLoading(false);
+                console.log(data);
+            } catch (err) {
+                setError('Failed to fetch weather data.');
+                setLoading(false);
+            }
+        };
+
+        fetchWeather();
+    }, []);
+
+    const formatTime = (unixTime) => {
+        const date = new Date(unixTime * 1000);
+        return date.toLocaleTimeString();
     };
 
-    fetchWeather();
-  }, []);
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
-  const formatTime = (unixTime) => {
-    const date = new Date(unixTime * 1000);  // Convert UNIX time to milliseconds
-    return date.toLocaleTimeString();  // Convert to a readable time format
-  };
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+    const roundedTemp = currweather?.main?.temp.toFixed(1);
 
-  // If loading, show a loading indicator
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+    return (
+        <div className="weather_card">
+            <h1>Check Weather Here</h1>
+            <div className="weather_info">
+                <div className="temperature"  data-Aos="fade-right">
+                    <div className="weather_info_heading">
+                        <h4>Temperature</h4>
+                    </div>
+                    <h2>
+                        {roundedTemp} C
+                    </h2>
+                </div>
 
-  // If there is an error, display the error message
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-  const roundedTemp = currweather?.main?.temp.toFixed(1); 
+                <div className="wind"  data-Aos="fade-right">
+                <div className="weather_info_heading">
+                        <h3>Wind</h3>
+                    </div>
+                    <h2> {currweather?.wind?.speed} km/h</h2>
+                </div>
 
-  // If weather data is successfully loaded, display the data
-  return (
-    <div className="weather_card">
-      <h1>Chennai, Egmore</h1>
+                <div className="sunrise"  data-Aos="fade-right">
+                <div className="weather_info_heading">
+                        <h3>Sunrise</h3>
+                    </div>
+                    <h2> {formatTime(currweather?.sys?.sunrise)}</h2>
+                </div>
 
-      <div className="weather_img">
-        <img src={Image} alt="weather Logo" />
-      </div>
-
-      <div className="weather_details">
-        <div className="left_side">
-          <h1>
-            {roundedTemp} <span>o</span> C
-          </h1>
+                <div className="sunset"  data-Aos="fade-right">
+                     <div className="weather_info_heading">
+                        <h3>Sunset</h3>
+                    </div>
+                    <h2>{formatTime(currweather?.sys?.sunset)}</h2>
+                </div>
+            </div>
         </div>
-        <div className="right_side">
-        <div className="wind">
-            <p>Wind: {currweather?.wind?.speed} km/h</p>
-          </div>
-          <div className="sun">
-            <p>Sunrise: {formatTime(currweather?.sys?.sunrise)}</p>
-            <p>Sunset: {formatTime(currweather?.sys?.sunset)}</p>
-          </div>
-          <p>Weather: {currweather?.weather[0]?.description}</p>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default WeatherCard;

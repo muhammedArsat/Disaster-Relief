@@ -9,7 +9,7 @@ const FeedCard = ({ content, image }) => {
     }, []);
     return (
         <div className="feed_card">
-            <div className="left_side" data-aos="fade-right">
+            <div className="left_side"   data-aos="fade-right">
                 <h3>{content}</h3>
             </div>
             <div className="right_side" data-aos="fade-left">
