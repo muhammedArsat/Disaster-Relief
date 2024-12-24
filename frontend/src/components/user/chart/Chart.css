@@ -1,0 +1,17 @@
+.chart_container {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%; /* Ensure it uses full width of the parent */
+    max-width: 500px;
+    margin: 0 auto; /* Center the chart on larger screens */
+    flex-basis: 50%;
+}
+
+@media (max-width: 480px) {
+    .chart_container {
+        padding: 5px; /* Reduce padding for smaller screens */
+        overflow-x: hidden; /* Allow horizontal scroll if necessary */
+        max-width: 400px;
+    }
+}

@@ -7,7 +7,7 @@ import { RiDashboardFill } from "react-icons/ri";
 import { TiHome } from "react-icons/ti";
 const Navbar = ({ isLogin, isNotFound, isAdmin }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false)
 
   const handleDialogbox = () => {
     setIsDialogOpen((curr) => !curr);
@@ -36,7 +36,7 @@ const Navbar = ({ isLogin, isNotFound, isAdmin }) => {
               </>
             ) : (
 
-       
+
               <>
                  {/* for desktop */}
                 <ul className="desktop_ul">
