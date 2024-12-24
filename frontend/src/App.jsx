@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import LandingPage from "./pages/user/landingPage/LandingPage";
 import Navbar from "./components/navbar/Navbar";
 import NotFound from "./pages/NotFound";
-import LocationPage from "./pages/user/locationPage/Location";
+import Test from "./Test"
+import LocationPage from "./pages/user/locationPage/Location"
+import Dashboard from "./pages/user/dashboard/Dashboard";
 
 const App = () => {
   return (
@@ -13,6 +15,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/user/location" element={<LocationPage />} />
+        <Route path="/user/dashboard" element={<Dashboard/>} />
+        <Route path="/user/test" element={<Test/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
@@ -31,13 +35,13 @@ const NavBarWrapper = () => {
   };
 
   if (path === "/") {
-    navbarProps.isLogin = true; // Landing page
+    navbarProps.isLogin = true;
   } else if (path.startsWith("/user")) {
-    navbarProps.isAdmin = false; // User pages
+    navbarProps.isAdmin = false;
   } else if (path.startsWith("/admin")) {
-    navbarProps.isAdmin = true; // Admin pages
+    navbarProps.isAdmin = true;
   } else {
-    navbarProps.isNotFound = true; // NotFound or wildcard pages
+    navbarProps.isNotFound = true;
   }
 
   return <Navbar {...navbarProps} />;
