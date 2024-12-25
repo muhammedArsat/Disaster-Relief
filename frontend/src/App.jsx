@@ -5,6 +5,7 @@ import LandingPage from "./pages/user/landingPage/LandingPage";
 import Navbar from "./components/navbar/Navbar";
 import NotFound from "./pages/NotFound";
 import LocationPage from "./pages/user/locationPage/Location";
+import Login from "./components/auth/login";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <NavBarWrapper />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/user/location" element={<LocationPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
