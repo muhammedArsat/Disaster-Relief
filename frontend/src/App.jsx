@@ -5,6 +5,7 @@ import LandingPage from "./pages/user/landingPage/LandingPage";
 import Navbar from "./components/navbar/Navbar";
 import NotFound from "./pages/NotFound";
 import LocationPage from "./pages/user/locationPage/Location";
+import Home from "./pages/user/home/Home";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/user/location-page" element={<LocationPage />} />
+        <Route path="/user/home" element ={<Home/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
@@ -28,6 +30,7 @@ const NavBarWrapper = () => {
     isLogin: false,
     isNotFound: false,
     isAdmin: false,
+
   };
 
   if (path === "/") {
@@ -36,7 +39,8 @@ const NavBarWrapper = () => {
     navbarProps.isAdmin = false; // User pages
   } else if (path.startsWith("/admin")) {
     navbarProps.isAdmin = true; // Admin pages
-  } else {
+  }
+   else {
     navbarProps.isNotFound = true; // NotFound or wildcard pages
   }
 
