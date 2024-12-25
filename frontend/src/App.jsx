@@ -12,6 +12,7 @@ import NotFound from './pages/NotFound';
 import Test from './Test';
 import LocationPage from './pages/user/locationPage/Location';
 import Dashboard from './pages/user/dashboard/Dashboard';
+import Home from './pages/user/home/Home';
 
 const App = () => {
     return (
@@ -19,6 +20,7 @@ const App = () => {
             <NavBarWrapper />
             <Routes>
                 <Route path="/" element={<LandingPage />} />
+                <Route path="/user/home" element={<Home />} />
                 <Route path="/user/location" element={<LocationPage />} />
                 <Route path="/user/dashboard" element={<Dashboard />} />
                 <Route path="/user/test" element={<Test />} />
