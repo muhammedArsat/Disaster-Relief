@@ -28,7 +28,6 @@ const App = () => {
     );
 };
 
-// Single Navbar for all pages
 const NavBarWrapper = () => {
     const location = useLocation();
     const path = location.pathname;
