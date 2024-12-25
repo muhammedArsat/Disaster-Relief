@@ -9,10 +9,10 @@ const homeFeed = ({place,image,description,date}) => {
   const [isExpanded,setIsExpanded]=useState(false);
 
   const handleLocationNavigate=()=>{
-    navigate("/user/location-page")
+    navigate("/user/location")
   }
   const handleFundNavigate=()=>{
-    navigate("/user/fund-page")
+    navigate("/user/fund")
   }
   const toggleReadMore=()=>{
     setIsExpanded((prev)=>!prev);
