@@ -4,11 +4,12 @@ import './FeedCard.css';
 import 'aos/dist/aos.css';
 import { GiDuration } from 'react-icons/gi';
 const FeedCard = ({ content, image }) => {
+    const currentTheme = localStorage.getItem('theme');
     useEffect(() => {
         Aos.init({ duration: 1000 });
     }, []);
     return (
-        <div className="feed_card">
+        <div className={`feed_card ${currentTheme === "dark" ? "dark_mode":""}`}>
             <div className="left_side"   data-aos="fade-right">
                 <h3>{content}</h3>
             </div>

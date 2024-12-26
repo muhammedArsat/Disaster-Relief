@@ -1,6 +1,5 @@
 .chart_container {
     padding: 10px;
-    background-color: white;
     border-radius: 10px;
     width: 100%; /* Ensure it uses full width of the parent */
     max-width: 500px;

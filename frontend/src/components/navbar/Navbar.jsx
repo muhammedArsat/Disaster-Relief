@@ -1,94 +1,130 @@
-import React, { useState } from "react";
-import "./Navbar.css";
-import { IoMenu } from "react-icons/io5";
-import { FaSun } from "react-icons/fa";
-import { FiLogOut } from "react-icons/fi";
-import { RiDashboardFill } from "react-icons/ri";
-import { TiHome } from "react-icons/ti";
+import React, { useEffect, useState } from 'react';
+import './Navbar.css';
+import { IoMenu } from 'react-icons/io5';
+import { FiLogOut } from 'react-icons/fi';
+import { RiDashboardFill } from 'react-icons/ri';
+import { TiHome } from 'react-icons/ti';
+import { Link } from 'react-router-dom';
+
 const Navbar = ({ isLogin, isNotFound, isAdmin }) => {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false)
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const [isDark, setIsDark] = useState(() => {
+        return localStorage.getItem('theme') === 'dark';
+    });
 
-  const handleDialogbox = () => {
-    setIsDialogOpen((curr) => !curr);
-  };
+    const handleDialogbox = () => {
+        setIsDialogOpen((curr) => !curr);
+    };
 
-  const handleMenuBar = () => {
-    setIsMobile((curr) => !curr);
-  };
+    const handleMenuBar = () => {
+        setIsMobile((curr) => !curr);
+    };
 
-  return (
-    <>
-      {isNotFound ? (
-        <></>
-      ) : (
+    const toggleTheme = () => {
+        setIsDark((curr) => {
+            const newTheme = !curr ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+            return !curr;
+        });
+        window.location.reload();
+    };
+
+    useEffect(() => {
+        if (isMobile) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'scroll';
+        }
+    }, [isMobile]);
+
+    const handleLogout = () => {
+        localStorage.removeItem('theme');
+        setIsDark(false);
+    };
+    return (
         <>
-          <nav>
-            <h2>RescueBridge</h2>
-
-            {/* for Landing Page */}
-            {isLogin ? (
-              <>
-                <div className="landing_page_nav">
-                  <button>Login</button>
-                  <button>SignUP</button>
-                </div>
-              </>
+            {isNotFound ? (
+                <></>
             ) : (
+                <>
+                    <nav>
+                        <h2>RescueBridge</h2>
 
+                        {/* for Landing Page */}
+                        {isLogin ? (
+                            <>
+                                <div className="landing_page_nav">
+                                    <button>Login</button>
+                                    <button>SignUp</button>
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                {/* for desktop */}
+                                <ul className="desktop_ul">
+                                    <Link to="/user/home">
+                                        <li>
+                                            Home <TiHome />
+                                        </li>
+                                    </Link>
+                                    <Link to="/user/dashboard">
+                                        <li>
+                                            Dashboard
+                                            <RiDashboardFill />
+                                        </li>
+                                    </Link>
+                                    <Link to="/">
+                                        <li
 
-              <>
-                 {/* for desktop */}
-                <ul className="desktop_ul">
-                  <li>
-                    Home <TiHome />
-                  </li>
-                  <li>
-                    Dashboard
-                    <RiDashboardFill />
-                  </li>
-                </ul>
-                <div className="menu" onClick={handleDialogbox}>
-                  <IoMenu size={30} />
-                </div>
-              {/* for mobile view */}
-                <div className="mobile_menu_bar">
-                  <div className="mobile_menu" onClick={handleMenuBar}>
-                    <IoMenu size={30} />
-                  </div>
-                  <ul className={`mobile_ul ${isMobile ? "open" : ""}`}>
-                    <li>
-                      Home <TiHome />
-                    </li>
-                    <li>
-                      Dashboard <RiDashboardFill />{" "}
-                    </li>
-                    <li>
-                      Theme <FaSun />
-                    </li>
-                    <li>
-                      Logout <FiLogOut />
-                    </li>
-                  </ul>
-                </div>
-              </>
+                                        >
+                                            Logout
+                                            <FiLogOut />
+                                        </li>
+                                    </Link>
+                                </ul>
+
+                                {/* for mobile view */}
+                                <div className="mobile_menu_bar">
+                                    <div
+                                        className="mobile_menu"
+                                        onClick={handleMenuBar}
+                                    >
+                                        <IoMenu size={30} />
+                                    </div>
+                                    <ul
+                                        className={`mobile_ul ${
+                                            isMobile ? 'open' : ''
+                                        }`}
+                                    >
+                                        <Link to="/user/home">
+                                            <li>
+                                                Home <TiHome />
+                                            </li>
+                                        </Link>
+                                        <Link to="/user/dashboard">
+                                            <li>
+                                                Dashboard
+                                                <RiDashboardFill />
+                                            </li>
+                                        </Link>
+                                        <Link to="/">
+                                            <li   onClick={() =>
+                                                setIsMobile((curr) => !curr)
+                                            }>
+                                                Logout
+                                                <FiLogOut />
+                                            </li>
+                                        </Link>
+                                    </ul>
+                                </div>
+                            </>
+                        )}
+                    </nav>
+                </>
             )}
-          </nav>
         </>
-      )}
-
-
-      {/* for dialogue Box  */}
-      <div className={`dialog_box ${isDialogOpen ? "open" : ""}`}>
-        <button>
-          Theme <FaSun size={17} />
-        </button>
-        <button>
-          Logout <FiLogOut size={17} />{" "}
-        </button>
-      </div>
-    </>
-  );
+    );
 };
 
 export default Navbar;
