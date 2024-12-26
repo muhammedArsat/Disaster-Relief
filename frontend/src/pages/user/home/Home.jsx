@@ -77,7 +77,7 @@ const Home = () => {
         "Severe flooding in chennai - egmore has displaced over 10,000 families, leaving them in urgent need of shelter and aid.",
       date: "2024-12-24",
     },
-    
+
   ];
 
   return (
