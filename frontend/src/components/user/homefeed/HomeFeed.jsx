@@ -22,19 +22,19 @@ const homeFeed = ({place,image,description,date}) => {
     setIsExpanded((prev)=>!prev);
   }
   return (
-    <div className="home-feed">
-    <div className='feed_post' data-aos="fade-right">
-        <h2>{place}</h2>
-        <img src={image} alt="Feeds"/>
+    <div className="home-feed" >
+    <div className='feed_post'data-aos="fade-left" >
+        <h2 >{place}</h2>
+        <img src={image} alt="Feeds" />
         <div className='icons'>
         <MdOutlineMyLocation  onClick={handleLocationNavigate}/>
          <PiMoneyFill onClick={handleFundNavigate}/>
         </div>
 
-        <p className='description'>
+        <p className='description' >
           {isExpanded?description:`${description.substring(0,100)}`}
           {description.length>100 && (
-            <span clcssName='read-more' onClick={toggleReadMore}>
+            <span className='read-more' onClick={toggleReadMore}>
               {isExpanded?"Read less":"Read more..."}
             </span>
           )}
