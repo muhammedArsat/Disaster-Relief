@@ -17,8 +17,10 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 18px;
     background-color: white;
+    transition: transform 0.09s ease, height 0.09s ease;
     overflow: hidden;
   }
+
   .feed_post img {
     max-width: 100%;
     margin-top:10px ;
