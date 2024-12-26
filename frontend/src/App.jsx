@@ -13,7 +13,7 @@ import Test from './Test';
 import LocationPage from './pages/user/locationPage/Location';
 import Dashboard from './pages/user/dashboard/Dashboard';
 import Home from './pages/user/home/Home';
-
+import FundPage from './pages/user/fundPage/fundPage';
 const App = () => {
     return (
         <Router>
