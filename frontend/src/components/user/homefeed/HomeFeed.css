@@ -17,20 +17,8 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 18px;
     background-color: white;
-<<<<<<< HEAD
-    transition: transform 1s ease-in-out, box-shadow 1s ease-in-out;
     overflow: hidden;
   }
-  .feed_post:hover {
-    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
-    transform: scale(0.99);
-  }
-=======
-    transition: transform 0.09s ease, height 0.09s ease;
-    overflow: hidden;
-  }
-
->>>>>>> 7523c5c6449247e34656076e837a66aae8700234
   .feed_post img {
     max-width: 100%;
     margin-top:10px ;
@@ -41,8 +29,7 @@
     font-size: 14px;
     line-height: 1.5;
     margin: 8px 0;
-    overflow: hidden;
-    transition: all 0.9s ease-in-out; transition:all 0.9s ease-in-out transaform 1s; /
+
   }
 
   .read-more {
