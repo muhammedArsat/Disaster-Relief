@@ -1,0 +1,25 @@
+.fundpage{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 100px;
+}
+@media (max-width: 480px) {
+    .fundpage {
+        display: flex;
+        flex-direction: column; /* Column layout for mobile view */
+        justify-content: start;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .fundpage > *:not(:last-child) {
+        margin-bottom: 20px; /* Add space between components except the last one */
+    }
+}
+
+@media (min-width: 490px) and (max-width: 1024px){
+    .fundpage{
+        padding: 50px;
+    }
+}
