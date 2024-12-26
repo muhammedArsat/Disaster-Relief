@@ -10,11 +10,11 @@
     padding:50px 10px;
     background-color: white;
     margin: 0 10px 10px  10px;
-    width: 98.5%;
-    height: 50vh;
+    width: 99%;
+    height: 80vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(../../../../assets/kc-bk-hero.jpg);
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
     color: white;
 }
@@ -26,7 +26,7 @@
     padding: 0px 20px;
     margin-bottom: 30px;
     max-width: 45ch;
-    word-wrap: break-word; 
+    word-wrap: break-word;
     line-height: 30px;
 }
 

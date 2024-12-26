@@ -1,0 +1,124 @@
+.weather_card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.weather_img img{
+    width: 200px;
+
+}
+
+.weather_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 30px;
+    flex-wrap: wrap;
+}
+.weather_info_heading{
+    display: flex;
+    text-align:left;
+    width: 100%;
+}
+.temperature {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../../../assets/celsius.jpg);
+    width: 200px;
+    height: 120px;
+    background-size: cover; /* Ensures the image fills the div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    padding: 10px;
+}
+
+
+.wind {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(../../../../assets/windmill.avif);
+    width: 200px;
+    height: 120px;
+    background-size: cover; /* Ensures the image fills the div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    padding: 10px;
+
+}
+
+
+.sunrise {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(../../../../assets/sunrise.jpg);
+    width: 200px;
+    height: 120px;
+    background-size: cover; /* Ensures the image fills the div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    padding: 10px;
+
+}
+
+.sunset {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../../../assets/sunset.jpeg);
+    width: 200px;
+    height: 120px;
+    background-size: cover; /* Ensures the image fills the div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    padding: 10px;
+
+}
+
+
+@media(max-width:480px){
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 25px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    .weather_info{
+        flex-direction: column;
+    }
+    .temperature{
+        width:300px;
+    }
+    .wind{
+        width:300px;
+    }
+    .sunrise{
+        width:300px;
+    }
+    .sunset{
+        width:300px;
+    }
+}

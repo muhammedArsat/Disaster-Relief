@@ -1,48 +1,57 @@
-import React from "react";
-import "./App.css";
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
-import LandingPage from "./pages/user/landingPage/LandingPage";
-import FundPage from "./pages/user/fundPage/FundPage";
-import Navbar from "./components/navbar/Navbar";
-import NotFound from "./pages/NotFound";
-import LocationPage from "./pages/user/locationPage/Location";
+import React from 'react';
+import './App.css';
+import {
+    BrowserRouter as Router,
+    Route,
+    Routes,
+    useLocation,
+} from 'react-router-dom';
+import LandingPage from './pages/user/landingPage/LandingPage';
+import Navbar from './components/navbar/Navbar';
+import NotFound from './pages/NotFound';
+import Test from './Test';
+import LocationPage from './pages/user/locationPage/Location';
+import Dashboard from './pages/user/dashboard/Dashboard';
+import Home from './pages/user/home/Home';
 
 const App = () => {
-  return (
-    <Router>
-      <NavBarWrapper />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/user/location-page" element={<LocationPage />} />
-        <Route path="/user/fund-page" element={<FundPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
-  );
+    return (
+        <Router>
+            <NavBarWrapper />
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/user/home" element={<Home />} />
+                <Route path="/user/location" element={<LocationPage />} />
+                <Route path="/user/dashboard" element={<Dashboard />} />
+                <Route path="/user/fund" element={<FundPage />} />
+                <Route path="/user/test" element={<Test />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+        </Router>
+    );
 };
 
-// Single Navbar for all pages
 const NavBarWrapper = () => {
-  const location = useLocation();
-  const path = location.pathname;
+    const location = useLocation();
+    const path = location.pathname;
 
-  let navbarProps = {
-    isLogin: false,
-    isNotFound: false,
-    isAdmin: false,
-  };
+    let navbarProps = {
+        isLogin: false,
+        isNotFound: false,
+        isAdmin: false,
+    };
 
-  if (path === "/") {
-    navbarProps.isLogin = true; // Landing page
-  } else if (path.startsWith("/user")) {
-    navbarProps.isAdmin = false; // User pages
-  } else if (path.startsWith("/admin")) {
-    navbarProps.isAdmin = true; // Admin pages
-  } else {
-    navbarProps.isNotFound = true; // NotFound or wildcard pages
-  }
+    if (path === '/') {
+        navbarProps.isLogin = true;
+    } else if (path.startsWith('/user')) {
+        navbarProps.isAdmin = false;
+    } else if (path.startsWith('/admin')) {
+        navbarProps.isAdmin = true;
+    } else {
+        navbarProps.isNotFound = true;
+    }
 
-  return <Navbar {...navbarProps} />;
+    return <Navbar {...navbarProps} />;
 };
 
 export default App;
