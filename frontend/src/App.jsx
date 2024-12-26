@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import LandingPage from "./pages/user/landingPage/LandingPage";
+import FundPage from "./pages/user/fundPage/FundPage";
 import Navbar from "./components/navbar/Navbar";
 import NotFound from "./pages/NotFound";
 import LocationPage from "./pages/user/locationPage/Location";
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/user/location-page" element={<LocationPage />} />
+        <Route path="/user/fund-page" element={<FundPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
