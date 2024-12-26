@@ -85,7 +85,6 @@ const totalAmount = data.reduce((acc,each)=>{
     return acc+each.amount;
 },0)
 
-    console.log(history);
     return (
         <div className="dashboard_container">
             {/* <div className="dashboard_heading">

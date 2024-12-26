@@ -10,18 +10,7 @@
     margin: 0px 10px 50px 50px;
     overflow: hidden;
 }
-.feed_card.dark_mode{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    width: 60%;
-    padding: 20px 10px;
-    border-radius: 10px;
-    margin: 0px 10px 50px 50px;
-    overflow: hidden;
-}
+
 
 .left_side {
     padding: 10px 30px;
