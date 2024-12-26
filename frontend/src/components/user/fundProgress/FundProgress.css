@@ -1,0 +1,117 @@
+.progress-card {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    height: 58vh;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.progress-header {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.progress-container {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.progress-text {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.progress-raised {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.progress-symbol {
+    font-size: 1rem;
+    margin: 4px 0;
+}
+
+.progress-goal {
+    font-size: 1rem;
+    color: gray;
+}
+
+.progress-details {
+    text-align: center;
+}
+
+.funders-count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.funders-label {
+    font-size: 1rem;
+    color: gray;
+}
+@media (max-width: 480px){
+    .progress-card {
+        width: 60%;
+        height: 60vh;
+        padding: 50px 30px;
+    }
+    .progress-container {
+        width: 150px;
+        margin-bottom: 10px;
+    }
+    .progress-text {
+        top: 50%;
+    }
+    .progress-raised {
+        font-size: 1.2rem;
+    }
+    
+    .progress-symbol {
+        font-size: 0.8rem;
+    }
+    
+    .progress-goal {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 490px) and (max-width: 1024px){
+    .progress-card {
+        width: 30%;
+        height: 50vh;
+        padding: 40px 30px;
+    }
+    .progress-container {
+        width: 150px;
+        margin-bottom: 10px;
+    }
+    .progress-text {
+        top: 50%;
+    }
+    .progress-raised {
+        font-size: 1.2rem;
+    }
+    
+    .progress-symbol {
+        font-size: 0.8rem;
+    }
+    
+    .progress-goal {
+        font-size: 0.8rem;
+    }
+}

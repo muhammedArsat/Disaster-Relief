@@ -13,7 +13,7 @@ import Test from './Test';
 import LocationPage from './pages/user/locationPage/Location';
 import Dashboard from './pages/user/dashboard/Dashboard';
 import Home from './pages/user/home/Home';
-
+import FundPage from './pages/user/fundPage/fundPage';
 const App = () => {
     return (
         <Router>
@@ -23,6 +23,7 @@ const App = () => {
                 <Route path="/user/home" element={<Home />} />
                 <Route path="/user/location" element={<LocationPage />} />
                 <Route path="/user/dashboard" element={<Dashboard />} />
+                <Route path="/user/fund" element={<FundPage />} />
                 <Route path="/user/test" element={<Test />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
