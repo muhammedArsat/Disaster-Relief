@@ -31,8 +31,7 @@
     font-size: 14px;
     line-height: 1.5;
     margin: 8px 0;
-    overflow: hidden;
-    transition: all 0.9s ease-in-out; transition:all 0.9s ease-in-out transaform 1s; /
+
   }
 
   .read-more {
