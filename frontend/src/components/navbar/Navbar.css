@@ -2,11 +2,21 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
-    padding: 10px 15px;
+    padding: 30px 15px;
     margin: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background-color: white;
+
+}
+.navbar.dark-mode {
+    background-color: #333;
+    color: white;
 }
 
+.navbar.light-mode {
+    background-color: #f0f0f0;
+    color: black;
+}
 ul {
     display: flex;
     list-style: none;
@@ -51,7 +61,7 @@ ul {
     gap: 10px;
     width: 120px;
     height: 90px;
-    padding: 20px;
+    padding: 30px;
     position: fixed;
     z-index: 3;
     right: 0;
@@ -60,25 +70,8 @@ ul {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transform: translateX(100%);
     transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-    opacity: 0;
-}
-.dialog_box.open {
     opacity: 1;
-    transform: translateX(0);
-    right: 0;
-    /* visibility: visible; */
-    /* transition: all 0.3s ease-in-out; */
-}
-.dialog_box button {
-    padding: 8px 10px;
-    background-color: #007fff;
-    border: none;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: white;
+    overflow: hidden;
 }
 
 .mobile_ul {
@@ -90,11 +83,13 @@ ul {
     height: 100vh;
     background-color: white;
     z-index: 2;
-    width: 200px;
-    top: 60px;
+    width: 150px;
+    top: 110px;
     left: -100%;
     transition: left 0.4s ease-in-out;
     align-items: center;
+    padding: 20px;
+    overflow-y: hidden;
 }
 
 .mobile_ul.open {
@@ -123,14 +118,18 @@ ul {
 .landing_page_nav button {
     background-color: #007fff;
     border: none;
-    padding: 8px 15px;
+    padding: 15px 18px;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 
     border-radius: 10px;
 }
 @media (max-width: 480px) {
     nav {
-        padding: 20px 15px;
+        padding: 30px 15px;
     }
     .desktop_ul {
         display: none;
@@ -141,4 +140,8 @@ ul {
     .mobile_menu_bar {
         display: block;
     }
+    .dialog_box{
+        display: none;
+    }
+
 }
