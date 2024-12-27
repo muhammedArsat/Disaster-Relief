@@ -6,7 +6,7 @@ const Login=()=>{
     Aos.init({duration:1000});
     return(
         <div className="login-body">
-            <div className="login-cont" data-Aos="fade-right">
+            <div className="login-cont" data-Aos="fade-right"data-Aos-offset="300" data-aos-easing="ease-in-sine">
                 <div className="login-left">
                     <h1>RESCUE BRIDGE</h1>
                     <h1>A DISASTER RELIEF PORTAL</h1>
