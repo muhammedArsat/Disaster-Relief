@@ -21,7 +21,7 @@ h5,
 h6 {
   font-family: "Inclusive sans";
 }
-p {
+p,a {
   font-family: "poppins";
 }
 button {
