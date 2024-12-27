@@ -6,40 +6,40 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center; 
-    align-items: flex-start; 
+    justify-content: center;
+    align-items: flex-start;
   }
-  
+
   .feed_post {
-    width: 90%; 
+    width: 90%;
     border: 1px solid #ccc;
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 18px;
     background-color: white;
-    transition: transform 0.09s ease, height 0.09s ease; 
-    overflow: hidden; 
+    transition: transform 0.09s ease, height 0.09s ease;
+    overflow: hidden;
   }
-  
+
   .feed_post img {
     max-width: 100%;
     margin-top:10px ;
     border-radius: 10px;
   }
-  
+
   .description {
     font-size: 14px;
     line-height: 1.5;
     margin: 8px 0;
-    transition: height 1.99s ease; 
+
   }
-  
+
   .read-more {
     color: blue;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
   }
-  
+
 .feed_post h2, p{
     text-align: left;
     width: 93%;
@@ -58,7 +58,7 @@
    font-size: 28px;
 }
 
-  
+
 
 /*mobile view */
 @media(max-width:480px){
@@ -71,4 +71,3 @@
 @media(min-width:490px) and (max-width:1024px){
 
 }
-

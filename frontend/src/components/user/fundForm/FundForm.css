@@ -1,0 +1,77 @@
+.form-card{
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color:black;
+    display: flex;
+    width: 30%;
+    height: 50vh;
+    padding: 50px 50px;
+    border-radius: 10px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 30px; 
+    font-size: 18px;
+}
+
+.pay-btn {
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pay-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.form-group input{
+    padding: 10px;
+    width: 150%;
+    background-color: rgb(235, 232, 232);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+@media (max-width: 480px){
+    .form-card {
+        width: 60%;
+        height: 50vh;
+        padding: 50px 30px;
+    }
+    .form-group{
+        font-size: 15px;        
+    }
+    .form-group input{
+        width: 90%;
+        padding: 5%;
+    }
+    .pay-btn{
+        width: 90%;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 490px) and (max-width: 1024px){
+    .form-card {
+        width: 30%;
+        height: 50vh;
+        padding: 40px 30px;
+    }
+    .form-group input{
+        width: 90%;
+        padding: 5%;
+        margin-bottom: 10px; 
+        font-size: 16px;
+    }
+    .form-group input{
+        width: 100%;
+        padding: 2%;
+        font-size: 14px;
+    }
+}

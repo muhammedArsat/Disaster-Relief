@@ -1,13 +1,15 @@
 import React from 'react';
 import './TransactionHistory.css';
 const TransactionHistory = ({ history }) => {
+
+    const currentTheme = localStorage.getItem('theme');
     return (
         <div className="history_container">
             <h1>Donation History</h1>
             <div className="table_container">
-                <table id="history">
+                <table className={`history ${currentTheme === 'dark'? "dark_mode" :""}`}>
                     <thead>
-                        <tr>
+                        <tr >
                             <th>S.no</th>
                             <th>Amount</th>
                             <th>Date</th>
@@ -16,7 +18,7 @@ const TransactionHistory = ({ history }) => {
                     <tbody>
                         {history.map((each, index) => {
                             return (
-                                <tr>
+                                <tr key={index}>
                                     <td>{index + 1}</td>
                                     <td>{each.date}</td>
                                     <td>{each.description}</td>

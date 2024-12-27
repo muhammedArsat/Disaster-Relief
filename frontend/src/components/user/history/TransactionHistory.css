@@ -15,23 +15,27 @@
     overflow-y: auto; /* Enable vertical scrolling when content exceeds height */
 }
 
-#history {
+.history {
     border-collapse: collapse;
     width: 100%;
     font-family: "inclusive sans";
 }
 
-#history td,
-#history th {
+.history td,
+.history th {
     border: 1px solid #ddd;
     padding: 8px;
 }
+.history.dark_mode td,.history.dark_mode th{
+    border: 1px solid white;
+    padding: 8px;
+}
 
-#history tr:nth-child(even) {
+.history tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-#history th {
+.history th {
     background-color: #007FFF;
     color: white;
     text-align: left;
