@@ -15,6 +15,7 @@ import Dashboard from './pages/user/dashboard/Dashboard';
 import Home from './pages/user/home/Home';
 import FundPage from './pages/user/fundPage/fundPage';
 import Login from './components/auth/Login'
+import Register from './components/register/Register';
 const App = () => {
     return (
         <Router>
@@ -22,6 +23,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/login" element={<Login />}/>
+                <Route path="/register" element={<Register/>}/>
                 <Route path="/user/home" element={<Home />} />
                 <Route path="/user/location" element={<LocationPage />} />
                 <Route path="/user/dashboard" element={<Dashboard />} />
