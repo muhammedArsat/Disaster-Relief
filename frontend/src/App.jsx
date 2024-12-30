@@ -18,7 +18,7 @@ import Login from './components/auth/Login'
 const App = () => {
     return (
         <Router>
-            <NavBarWrapper />
+<NavBarWrapper />
             <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/login" element={<Login />}/>
